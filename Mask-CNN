@@ -1,0 +1,38 @@
+First, I need to configure the environment by using the command
+
+pip install -r requirements.txt
+
+ And then I download the whole project from git hub 
+
+git clone https://github.com/matterport/Mask_RCNN.git
+
+Then I need to do the set up by using the commend, and run the mask_cnn on the dog image test dataset
+
+python setup.py install
+
+
+
+python mask_cnn.py splash --weight=/mask_rcnn_balloon.h5 --image=/dog.jpg
+
+The first time I got an error message that the weight file (mask_rcnn_balloon.h5) permission was denied. So, I need to authorise the weight first by using  
+
+sudo chmod 755 'mask_rcnn_coco.h5'
+
+Then run the program again 
+
+ 
+
+
+There is an output image in the current working folder
+
+And we check the output image
+
+ 
+
+Seems like the model doesn’t recognize the dog.
+
+If we try the original dataset that provide by the model
+
+ 
+python mask_cnn.py splash --weight=mask_rcnn_balloon.h5 --image=test.jpg
+
